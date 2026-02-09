@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{glossaries}
+\usepackage[round]{natbib}
+
+% --- Glossary ---
+\makeglossaries
+\newacronym{LLM}{LLM}{Large Language Models}
+\newacronym{RAG}{RAG}{Retrieval-Augmented Generation}
+\newacronym{SLM}{SLM}{Small Language Model}
+
+% --- Formatting ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Final Fellowship Report},
+}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+
+% --- Metadata ---
+\title{Final Research Fellowship Report}
+\author{Aqila Farahmand\\University of Urbino Carlo Bo\\\texttt{aqila.farahmand@uniurb.it}}
+\date{Reporting Period: March 2025 -- March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    This report summarizes the research activities, key findings, and professional development milestones achieved during the one-year fellowship period.
+    The work primarily focused on the following research project: Smart Shires: LM-based Intelligent Services Supporting Decentralized and Rural Areas.
+    Our work during the fellowship period included the development of MedicoAI, a cross-platform application with offline functionality for the medical question-answering task for patient self-management,
+    supporting decentralized and rural areas when the internet connectivity is limited.
+    And \gls{RAG}-Enhanced Open \gls{SLM}s for the Hypertension Management Chatbots research project that was published in the journal of Medical Systems.
+
+    This report discusses the work done during the fellowship period and the key findings and achievements.
+
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}\label{sec:introduction}
+%
+The main goal of our research project studies the feasibility of implementing Large Langauge based intelligent services
+supporting decentralized and Rural areas, mainly in the medical domain.
+%
+I started the fellowship with a comprehensive literature review to identify gaps in existing research and to refine our research questions.
+%
+\glspl{LLM}s, such as HealthLLM~\cite{kim2024healthllmlargelanguagemodels} are valuable in health care, due to their ability to process complex data and generate insights.
+However, they come with several challenges, in particular heavy computational requirements and privacy concerns, and some state-of-the-art \glspl{LLM}s are not open source and require a paid subscription, which limits their accessibility.
+%
+Existing \gls{LLM}s often rely on cloud-based services, which raises privacy concerns and the risk of information leakage~\cite{zhang2024enablingondevicellmspersonalization}, especially when handling sensitive medical data.
+%
+Cloud-based \glspl{LLM}s also require a stable internet connection, and they may not be suitable for real-time applications due to high latency~\cite{zhang2024enablingondevicellmspersonalization}.
+In particular, in rural areas with limited internet connectivity, the use of cloud-based \glspl{LLM}s can be challenging.
+%
+These limitations make \glspl{LLM}s less ideal for deployment in decentralized and rural areas, especially in healthcare settings where data privacy is a major concern.
+
+Moreover, existing \glspl{LLM}s are often trained on general data and may not perform well in specialized domains like healthcare, where domain-specific knowledge is crucial.
+%
+To address these challenges, we explored the use of \gls{RAG} together with \glspl{SLM}s as a potential solution to enhance the performance of \glspl{SLM}s
+for specialized tasks such as hypertension management chatbots, while also addressing the limitations of \glspl{LLM}s in terms of computational requirements and privacy concerns.
+%
+In the first few months, I collaborated with my supervisors and other researchers on the \gls{RAG}-Enhanced Open \gls{SLM}s for the Hypertension Management Chatbots research project.
+We conducted experiments to study the effectiveness of \gls{RAG} techniques in comparison to prompt engineering techniques for enhancing the performance of \glspl{SLM}s in the context of hypertension management chatbots.
+%
+This research project provided valuable insights into using \gls{SLM}s as a promising alternative to \glspl{LLM}s for specialized tasks.
+Our findings show that \gls{RAG} techniques demonstrate equal or better performance compared to \gls{SLM}s with prompting techniques alone in terms of medical faithfulness when used for the general medical question-answering tasks.
+%
+In the second half of the fellowship, to address the limitations of \glspl{LLM}s in terms of computational requirements and privacy concerns,
+we conducted a literature review to explore the existing approaches for developing \glspl{LLM}s that can be deployed on edge devices, such as smartphones and tablets, which are more accessible in decentralized and rural areas.
+Based on the insights gained from the literature review, we developed MedicoAI, a prototype application which implements on-device \glspl{SLM}s for medical question-answering tasks to support patient self-management in decentralized and rural areas.
+Also, the choice of \gls{SLM}s over \gls{LLM}s was made to address the computational requirements and privacy concerns associated with \gls{LLM}s,
+as \gls{SLM}s can be deployed on edge devices without the need for a stable internet connection, and they can be trained on domain-specific data to enhance their performance in specialized tasks.
+%
+In this study, we investigate the baseline capabilities of \gls{SLM}s for general medical question-answering on mobile devices using various prompting techniques. We
+specifically selected four state-of-the-art \gls{SLM}s with model sizes under 1GB, including Gemma3-1B-IT,
+Hammer2.1-0.5b, Qwen2.5-0.5B-Instruct, and Smollm-135M-Instruct.
+%
+These models are evaluated using two prompt templates, a standard baseline, and one with
+medical safety constraints.
+Furthermore, we implemented three word-limit configurations to facilitate a fair comparison of token counts and response times across all models.
+%
+The core design of MedicoAI ensures that user queries and personal data remain on the user’s device, eliminating server-side storage of sensitive medical conversations.
+%
+
+
+\section{Key Results and Achievements}\label{sec:key-results-and-achievements}
+Highlight what you accomplished over the 12 months.
+\begin{itemize}
+    \item \textbf{Deliverable 1:} Conducted the experiments to study the effectiveness of \gls{RAG} techniques in comparison to prompt engineering techniques for enhancing the performance of \glspl{SLM}s in the context of hypertension management chatbots.
+    \item \textbf{Deliverable 2:} Co-authored the paper which has been published in the journal of Medical Systems~\cite{ragEnhancedSLMs2025}.
+    \item \textbf{Deliverable 3:} Developed MedicoAI, a cross-platform application with offline functionality for the medical question-answering task for patient self-management.
+    \item \textbf{Deliverable 4:} The paper describing the MedicoAI application experiments is accepted in TELMED workshop at PerCome 2026 for presentation in Pisa, Italy.
+\end{itemize}
+
+\section{Professional Development}\label{sec:professional-development}
+\begin{itemize}
+    \item \textbf{Summer School:} Attended GenAI summer school in Tempera in Finland, which provided me with a comprehensive understanding of the latest advancements in generative AI and its applications in various domains.
+    Also, invited to be a part of their panel discussion on the future of Generative AI and its impact on society was a great opportunity to share my insights and learn from other experts in the field.
+    \item \textbf{Skills:} Improved my skills in writing scientific paper using LaTeX, Python, \gls{RAG} architecture, \gls{LLM} frameworks, and libraries such as Langchain and HuggingFace.
+\end{itemize}
+
+\section{Challenges}
+%
+One of the main challenges in conducting the research was limited access to datasets for training and evaluating the models, especially in the medical domain where data privacy is a major concern.
+This made it difficult to train and evaluate our experiments effectively, and it also limited the scope of our research to some extent.
+Also, the lack of standardized benchmarks for evaluating \gls{LLM}s in healthcare settings.
+
+\section{Conclusion and Future Outlook}\label{sec:conclusion-and-future-outlook}
+%
+In conclusion, the research conducted during the fellowship period has provided valuable insights into the use of \gls{RAG} techniques together with \glspl{SLM}s for enhancing the performance of language models in specialized tasks, particularly in healthcare settings.
+The results of our findings were published in the journal of Medical Systems~\cite{ragEnhancedSLMs2025}.
+%
+The development of MedicoAI demonstrates the feasibility of deploying \gls{SLM}s on edge devices for medical question-answering tasks, which can support patient self-management in decentralized and rural areas
+with limited internet connectivity.
+The paper describing the MedicoAI application experiments is accepted in TELMED workshop at PerCome 2026 for presentation in Pisa, Italy.
+%
+This research has implications for the development of intelligent services that can be deployed in decentralized and rural areas, particularly in healthcare settings where data privacy is a major concern.
+%
+
+\printglossaries
+\bibliographystyle{plainnat}
+\bibliography{biblio}
+
+\end{document}
